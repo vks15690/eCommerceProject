@@ -1,231 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-
-<spring:url var="css" value="/resources/assets/css"/>
-<spring:url var="ico" value="/resources/assets/ico"/>
-<spring:url var="js" value="/resources/assets/js"/>
-<spring:url var="jsHelperPlugins" value="/resources/assets/js/helper-plugins"/>
-<spring:url var="jsJQuery" value="/resources/assets/js/jquery"/>
-<spring:url var="plugins" value="/resources/assets/plugins"/>
-<spring:url var="pluginsICheck" value="/resources/assets/plugins/icheck-1.x"/>
-<spring:url var="pluginsJQueryMatchHeightMaster" value="/resources/assets/plugins/jquery-match-height-master"/>
-<spring:url var="pluginsJQueryMatchHeightMasterDist" value="/resources/assets/plugins/jquery-match-height-master/dist"/>
-<spring:url var="pluginsRating" value="/resources/assets/plugins/rating"/>
-<spring:url var="pluginsSmoothProductMaster" value="/resources/assets/plugins/smoothproducts-master"/>
-<spring:url var="pluginsSwiperMaster" value="/resources/assets/plugins/swiper-master"/>
-<spring:url var="images" value="/resources/images"/>
-<spring:url var="imageBlog" value="/resources/images/blog"/>
-<spring:url var="imageBrand" value="/resources/images/brand"/>
-<spring:url var="imageCategory" value="/resources/images/category"/>
-<spring:url var="imageFeatured" value="/resources/images/featured"/>
-<spring:url var="imageHeroBg" value="/resources/images/hero-bg"/>
-<spring:url var="imageLook3" value="/resources/images/look3"/>
-<spring:url var="imageParallax" value="/resources/images/parallax"/>
-<spring:url var="imageProduct" value="/resources/images/product"/>
-<spring:url var="imageProductDetails" value="/resources/images/product-details"/>
-<spring:url var="imageSite" value="/resources/images/site"/>
-<spring:url var="imageSitePayment" value="/resources/images/site/payment"/>
-<spring:url var="imageSliderBox" value="/resources/images/slider/box"/>
-<spring:url var="imageSliderSingleImg" value="/resources/images/slider/single-img"/>
-<spring:url var="imageSlider" value="/resources/images/slider"/>
-<spring:url var="bootstrapCss" value="/resources/assets/bootstrap/css"/>
-<spring:url var="bootstrapFonts" value="/resources/assets/bootstrap/fonts"/>
-<spring:url var="bootstrapJs" value="/resources/assets/bootstrap/js"/>
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Fav and touch icons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="${ico}/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="${ico}/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="${ico}/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
-    <link rel="shortcut icon" href="${ico}/favicon.png">
-    <title>Estore</title>
-    <!-- Bootstrap core CSS -->
-    <link href="${bootstrapCss}/bootstrap.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="${css}/style.css" rel="stylesheet">
-
-    <!-- font-awesome icon-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <!-- Just for debugging purposes. -->
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- include pace script for automatic web page progress bar  -->
-
-
-    <script>
-        paceOptions = {
-            elements: true
-        };
-    </script>
-
-    <script src="${js}/pace.min.js"></script>
-<!-- add theme styles for this template -->
-<link id="pagestyle" rel="stylesheet" type="text/css" href="${css}/skin-1.css">
-<link  rel="stylesheet" type="text/css" href="${css}/gray-look.css">
-
-</head>
-
-<body>
-
-<script type="text/javascript">
-    function swapStyleSheet(sheet){
-        document.getElementById('pagestyle').setAttribute('href', sheet);
-    }
-</script>
-<style>
-    .themeControll{
-        display: none;
-    }
-</style>
-
-<div class="themeControll">
-    <h3 style="width: 60px; font-size: 10px; line-height: 12px;" class="uppercase color-white text-center"> Choose your colour </h3>
-    <a onclick="swapStyleSheet('assets/css/skin-1.css')" style="background:#4ec67f;border-top: 12px solid #27AE60;"> </a>
-    <a onclick="swapStyleSheet('assets/css/skin-8.css')" style="background:#3BCA95;border-top: 12px solid #34BC8A"> </a>
-    <a onclick="swapStyleSheet('assets/css/skin-2.css')" style="background:#1ABC9C;border-top: 12px solid #16A085"> </a>
-    <a onclick="swapStyleSheet('assets/css/skin-3.css')" style="background:#3498DB;border-top: 12px solid #2980B9"> </a>
-    <a onclick="swapStyleSheet('assets/css/skin-4.css')" style="background:#9B59B6;border-top: 12px solid #9149AF"> </a>
-    <a onclick="swapStyleSheet('assets/css/skin-5.css')" style="background:#E74C3C;border-top: 12px solid #C0392B"> </a>
-    <a onclick="swapStyleSheet('assets/css/skin-7.css')" style="background:#95A5A6;border-top: 12px solid #7F8C8D"> </a>
-    <a onclick="swapStyleSheet('assets/css/skin-9.css')" style="background:#F7B529;border-top: 12px solid #E78E00"> </a>
-    <a onclick="swapStyleSheet('assets/css/skin-10.css')" style="background:#F17370;border-top: 12px solid #F26663"> </a>
-    <a onclick="swapStyleSheet('assets/css/skin-11.css')" style="background:#273646;border-top: 12px solid #2ECC71"> </a>
-    <a onclick="swapStyleSheet('assets/css/skin-6.css')" style="background:#34495E;border-top: 12px solid #283949"> </a>
-    <h3 style="width: 60px; font-size: 10px; line-height: 12px;" class="uppercase color-white text-center">
-        <br>
-        <a style="color:#fff" href="../index.html"><i class="fa fa-angle-double-left"></i> Theme Chooser </a> </h3>
-    <p class="tbtn">  <i class="fa fa-angle-double-left"></i></p>
-</div>
-
-
-
-<!-- Modal Login start -->
-<div class="modal signUpContent fade" id="ModalLogin" tabindex="-1" role="dialog">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"> &times; </button>
-                <h3 class="modal-title-site text-center"> Login to TSHOP </h3>
-            </div>
-            <div class="modal-body">
-                <div class="form-group login-username">
-                    <div>
-                        <input name="log" id="login-user" class="form-control input" size="20"
-                               placeholder="Enter Username" type="text">
-                    </div>
-                </div>
-                <div class="form-group login-password">
-                    <div>
-                        <input name="Password" id="login-password" class="form-control input" size="20"
-                               placeholder="Password" type="password">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div>
-                        <div class="checkbox login-remember">
-                            <label>
-                                <input name="rememberme" value="forever" checked="checked" type="checkbox">
-                                Remember Me </label>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div>
-                        <input name="submit" class="btn  btn-block btn-lg btn-primary" value="LOGIN" type="submit">
-                    </div>
-                </div>
-                <!--userForm-->
-
-            </div>
-            <div class="modal-footer">
-                <p class="text-center"> Not here before? <a data-toggle="modal" data-dismiss="modal"
-                                                            href="#ModalSignup"> Sign Up. </a> <br>
-                    <a href="forgot-password.jsp"> Lost your password? </a></p>
-            </div>
-        </div>
-        <!-- /.modal-content -->
-
-    </div>
-    <!-- /.modal-dialog -->
-
-</div>
-<!-- /.Modal Login -->
-
-<!-- Modal Signup start -->
-<div class="modal signUpContent fade" id="ModalSignup" tabindex="-1" role="dialog">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"> &times; </button>
-                <h3 class="modal-title-site text-center"> REGISTER </h3>
-            </div>
-            <div class="modal-body">
-                <div class="control-group"><a class="fb_button btn  btn-block btn-lg " href="#"> SIGNUP WITH
-                    FACEBOOK </a></div>
-                <h5 style="padding:10px 0 10px 0;" class="text-center"> OR </h5>
-
-                <div class="form-group reg-username">
-                    <div>
-                        <input name="login" class="form-control input" size="20" placeholder="Enter Username"
-                               type="text">
-                    </div>
-                </div>
-                <div class="form-group reg-email">
-                    <div>
-                        <input name="reg" class="form-control input" size="20" placeholder="Enter Email" type="text">
-                    </div>
-                </div>
-                <div class="form-group reg-password">
-                    <div>
-                        <input name="password" class="form-control input" size="20" placeholder="Password"
-                               type="password">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div>
-                        <div class="checkbox login-remember">
-                            <label>
-                                <input name="rememberme" id="rememberme" value="forever" checked="checked"
-                                       type="checkbox">
-                                Remember Me </label>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div>
-                        <input name="submit" class="btn  btn-block btn-lg btn-primary" value="REGISTER" type="submit">
-                    </div>
-                </div>
-                <!--userForm-->
-
-            </div>
-            <div class="modal-footer">
-                <p class="text-center"> Already member? <a data-toggle="modal" data-dismiss="modal" href="#ModalLogin">
-                    Sign in </a></p>
-            </div>
-        </div>
-        <!-- /.modal-content -->
-
-    </div>
-    <!-- /.modal-dialog -->
-
-</div>
-
 <!-- Fixed navbar start -->
+
 <div class="navbar navbar-tshop navbar-fixed-top megamenu" role="navigation">
     <div class="navbar-top">
         <div class="container">
@@ -292,7 +66,7 @@
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-cart"><i
                     class="fa fa-shopping-cart colorWhite"> </i> <span
                     class="cartRespons colorWhite"> Cart ($210.00) </span></button>
-            <a class="navbar-brand " href="index.jsp"><p class="estor-logo"><span>E</span>STORE</p></a>
+            <a class="navbar-brand " href="${contextRoot}/pageContent"><p class="estor-logo"><span>E</span>STORE</p></a>
 
             <!-- this part for mobile -->
             <div class="search-box pull-right hidden-lg hidden-md hidden-sm">
@@ -313,7 +87,7 @@
                         <tbody>
                         <tr class="miniCartProduct">
                             <td style="width:20%" class="miniCartProductThumb">
-                                <div><a href="product-details.html"> <img src="${imageProduct}/3.jpg" alt="img"> </a>
+                                <div><a href="product-details.jsp"> <img src="${imageProduct}/3.jpg" alt="img"> </a>
                                 </div>
                             </td>
                             <td style="width:40%">
@@ -576,7 +350,20 @@
                                 <li><a href="#"> TSHOP </a></li>
                                 <li><a href="#"> TANJIM </a></li>
                             </ul>
-
+                            <!-- <ul class="col-lg-3  col-sm-3 col-md-3 col-xs-6">
+                                 <li class="no-margin productPopItem "><a href="product-details.html"> <img
+                                         class="img-responsive" src="images/site/g4.jpg" alt="img"> </a> <a
+                                         class="text-center productInfo alpha90" href="product-details.html"> Eodem modo
+                                     typi <br>
+                                     <span> $60 </span> </a></li>
+                            </ul>-->
+                            <!-- <ul class="col-lg-3  col-sm-3 col-md-3 col-xs-6">
+                                 <li class="no-margin productPopItem relative"><a href="product-details.html"> <img
+                                         class="img-responsive" src="images/site/g5.jpg" alt="img"> </a> <a
+                                         class="text-center productInfo alpha90" href="product-details.html"> Eodem modo
+                                     typi <br>
+                                     <span> $60 </span> </a></li>
+                             </ul>-->
                             <ul class="col-lg-2  col-sm-2 col-md-2  unstyled">
                                 <li>
                                     <p><strong> Home & Living </strong></p>
@@ -649,7 +436,20 @@
                                 <li><a href="#"> TSHOP </a></li>
                                 <li><a href="#"> TANJIM </a></li>
                             </ul>
-
+                            <!-- <ul class="col-lg-3  col-sm-3 col-md-3 col-xs-6">
+                                 <li class="no-margin productPopItem "><a href="product-details.html"> <img
+                                         class="img-responsive" src="images/site/g4.jpg" alt="img"> </a> <a
+                                         class="text-center productInfo alpha90" href="product-details.html"> Eodem modo
+                                     typi <br>
+                                     <span> $60 </span> </a></li>
+                            </ul>-->
+                            <!-- <ul class="col-lg-3  col-sm-3 col-md-3 col-xs-6">
+                                 <li class="no-margin productPopItem relative"><a href="product-details.html"> <img
+                                         class="img-responsive" src="images/site/g5.jpg" alt="img"> </a> <a
+                                         class="text-center productInfo alpha90" href="product-details.html"> Eodem modo
+                                     typi <br>
+                                     <span> $60 </span> </a></li>
+                             </ul>-->
                             <ul class="col-lg-2  col-sm-2 col-md-2  unstyled">
                                 <li>
                                     <p><strong> Home & Living </strong></p>
@@ -722,7 +522,20 @@
                                 <li><a href="#"> TSHOP </a></li>
                                 <li><a href="#"> TANJIM </a></li>
                             </ul>
-
+                            <!-- <ul class="col-lg-3  col-sm-3 col-md-3 col-xs-6">
+                                 <li class="no-margin productPopItem "><a href="product-details.html"> <img
+                                         class="img-responsive" src="images/site/g4.jpg" alt="img"> </a> <a
+                                         class="text-center productInfo alpha90" href="product-details.html"> Eodem modo
+                                     typi <br>
+                                     <span> $60 </span> </a></li>
+                            </ul>-->
+                            <!-- <ul class="col-lg-3  col-sm-3 col-md-3 col-xs-6">
+                                 <li class="no-margin productPopItem relative"><a href="product-details.html"> <img
+                                         class="img-responsive" src="images/site/g5.jpg" alt="img"> </a> <a
+                                         class="text-center productInfo alpha90" href="product-details.html"> Eodem modo
+                                     typi <br>
+                                     <span> $60 </span> </a></li>
+                             </ul>-->
                             <ul class="col-lg-2  col-sm-2 col-md-2  unstyled">
                                 <li>
                                     <p><strong> Home & Living </strong></p>
@@ -795,7 +608,20 @@
                                 <li><a href="#"> TSHOP </a></li>
                                 <li><a href="#"> TANJIM </a></li>
                             </ul>
-
+                            <!-- <ul class="col-lg-3  col-sm-3 col-md-3 col-xs-6">
+                                 <li class="no-margin productPopItem "><a href="product-details.html"> <img
+                                         class="img-responsive" src="images/site/g4.jpg" alt="img"> </a> <a
+                                         class="text-center productInfo alpha90" href="product-details.html"> Eodem modo
+                                     typi <br>
+                                     <span> $60 </span> </a></li>
+                            </ul>-->
+                            <!-- <ul class="col-lg-3  col-sm-3 col-md-3 col-xs-6">
+                                 <li class="no-margin productPopItem relative"><a href="product-details.html"> <img
+                                         class="img-responsive" src="images/site/g5.jpg" alt="img"> </a> <a
+                                         class="text-center productInfo alpha90" href="product-details.html"> Eodem modo
+                                     typi <br>
+                                     <span> $60 </span> </a></li>
+                             </ul>-->
                             <ul class="col-lg-2  col-sm-2 col-md-2  unstyled">
                                 <li>
                                     <p><strong> Home & Living </strong></p>
@@ -811,11 +637,20 @@
                         </li>
                     </ul>
                 </li>
-                <!--brands menu-->
+               <!--brands menu-->
                 <li class="dropdown megamenu-fullwidth"><a data-toggle="dropdown" class="dropdown-toggle" href="#">
                     BRANDS <b class="caret"> </b> </a>
                     <ul class="dropdown-menu">
                         <li class="megamenu-content ProductDetailsList">
+                            <!-- remove .ProductDetailsList class from megamenu-content || this class for demo uses only -->
+
+                            <!-- megamenu-content -->
+
+                            <!--<h3 class="promo-1 no-margin hidden-xs">60 + HTML PAGES || AVAILABLE ONLY AT WRAP-->
+                                <!--BOOTSTRAP </h3>-->
+
+                            <!--<h3 class="promo-1sub hidden-xs"> Complete Parallax E-Commerce Boostrap Template, Responsive-->
+                                <!--on any Device, 10+ color Theme + Parallax Effect </h3>-->
 
                             <ul class="col-lg-2  col-sm-2 col-md-2 unstyled">
                                 <li class="no-border">
@@ -900,14 +735,14 @@
                                 <li class="no-border">
                                     <p><strong> Checkout </strong></p>
                                 </li>
-                                <li><a href="checkout-0.jsp"> Checkout Before </a></li>
-                                <li><a href="checkout-1.jsp"> checkout step 1 </a></li>
-                                <li><a href="checkout-2.jsp"> checkout step 2 </a></li>
-                                <li><a href="checkout-3.jsp"> checkout step 3 </a></li>
-                                <li><a href="checkout-4.jsp"> checkout step 4 </a></li>
-                                <li><a href="checkout-5.jsp"> checkout step 5 </a></li>
-                                <li><a href="one-page-checkout.jsp"> One page checkout <span
-                                        class="label label-success">NEW</span> </a></li>
+                                <li><a href="checkout.jsp"> Checkout Before </a></li>
+                                <!--<li><a href="checkout-1.html"> checkout step 1 </a></li>
+                                <li><a href="checkout-2.html"> checkout step 2 </a></li>
+                                <li><a href="checkout-3.html"> checkout step 3 </a></li>
+                                <li><a href="checkout-4.html"> checkout step 4 </a></li>
+                                <li><a href="checkout-5.html"> checkout step 5 </a></li>
+                                <li><a href="one-page-checkout.html"> One page checkout <span
+                                        class="label label-success">NEW</span> </a></li> -->
                                 <li><a href="thanks-for-order.jsp"> Thanks for order</a></li>
                             </ul>
                             <ul class="col-lg-1  col-sm-1 col-md-1 no-padding unstyled">
@@ -1102,264 +937,3 @@
     <!--/.search-full-->
 
 </div>
-<!-- /.Fixed navbar  -->
-
-
-<div class="parallax-section parallax-fx parallax-image-aboutus parallaxOffset no-padding">
-    <div class="w100 ">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <div class="parallax-content clearfix animated ">
-                        <h1 class="x2large">
-                            ABOUT ESTORE
-                        </h1>
-                        <h5 class="parallaxSubtitle">
-                            Lorem ipsum dolor sit amet consectetuer
-                        </h5>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- /.parallax -->
-
-<div class="container main-container ">
-
-    <div class="row innerPage">
-        <div class="col-lg-12 col-md-12 col-sm-12">
-            <div class="row userInfo">
-                <div class="col-xs-12 col-sm-12">
-                    <h1 class="title-big text-center section-title-style2">
-            <span>
-              About us
-            </span>
-                    </h1>
-
-                    <p class="lead text-center">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac augue at erat hendrerit
-                        dictum. Praesent porta, purus eget sagittis imperdiet, nulla mi ullamcorper metus, id hendrerit
-                        metus diam vitae est. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-                        inceptos himenaeos.
-                    </p>
-
-
-                    <hr class="hr hr30">
-                    <div class="row animated">
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-sm-6">
-                            <img class="img-responsive" src="${imageSite}/new-collection-1.jpg" alt="img">
-
-                            <h3 class="block-title-3">
-                                Consectetur adipiscing
-                            </h3>
-
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac augue at erat
-                                hendrerit dictum. Praesent porta, purus eget sagittis imperdiet, nulla mi ullamcorper
-                                metus, id hendrerit metus diam vitae est. Class aptent taciti sociosqu ad litora
-                                torquent per conubia nostra, per inceptos himenaeos.
-                            </p>
-
-
-                        </div>
-
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-sm-6">
-                            <img class="img-responsive" src="${imageSite}/new-collection-2.jpg" alt="img">
-
-                            <h3 class="block-title-3">
-                                Lorem ipsum dolor
-                            </h3>
-
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac augue at erat
-                                hendrerit dictum. Praesent porta, purus eget sagittis imperdiet, nulla mi ullamcorper
-                                metus, id hendrerit metus diam vitae est. Class aptent taciti sociosqu ad litora
-                                torquent per conubia nostra, per inceptos himenaeos.
-                            </p>
-
-                        </div>
-
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-sm-6">
-                            <img class="img-responsive" src="${imageSite}/new-collection-3.jpg" alt="img">
-
-                            <h3 class="block-title-3">
-                                Consectetur adipiscing
-                            </h3>
-
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac augue at erat
-                                hendrerit dictum. Praesent porta, purus eget sagittis imperdiet, nulla mi ullamcorper
-                                metus, id hendrerit metus diam vitae est. Class aptent taciti sociosqu ad litora
-                                torquent per conubia nostra, per inceptos himenaeos.
-                            </p>
-
-                        </div>
-
-
-                    </div>
-                    <!--/.row-->
-
-                    <hr>
-                </div>
-            </div>
-            <!--/row end-->
-        </div>
-    </div>
-    <!--/.innerPage-->
-    <div style="clear:both"></div>
-</div>
-<!-- /.main-container -->
-
-
-<div class="gap"></div>
-
-
-<%-- <footer>
-    <div class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3  col-md-3 col-sm-4 col-xs-6">
-                    <h3> Support </h3>
-                    <ul>
-                        <li class="supportLi">
-                            <p> Lorem ipsum dolor sit amet, consectetur </p>
-                            <h4><a class="inline" href="callto:+12025550151"> <strong> <i class="fa fa-phone"> </i> +1-202-555-0151 </strong> </a></h4>
-                            <h4><a class="inline" href="mailto:help@yourweb.com"> <i class="fa fa-envelope-o"> </i>
-                                help@yourweb.com </a></h4>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
-                    <h3> Shop </h3>
-                    <ul>
-                        <li><a href="#">
-                            Men's
-                        </a></li>
-                        <li><a href="#">
-                            Women's</a></li>
-                        <li><a href="#">
-                            Kids'
-                        </a></li>
-                        <li><a href="#">Shoes
-                        </a></li>
-                        <li><a href="#">
-                            Gift Cards
-                        </a></li>
-
-                    </ul>
-                </div>
-
-                <div style="clear:both" class="hide visible-xs"></div>
-
-                <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
-                    <h3> Information </h3>
-                    <ul class="list-unstyled footer-nav">
-                        <li><a href="#">Questions?
-                        </a></li>
-
-                        <li><a href="#"> Order Status
-                        </a></li>
-                        <li><a href="#"> Sizing Charts
-                        </a></li>
-                        <li><a href="#"> Return Policy </a></li>
-                        <li><a href="#">
-                            Contact Us
-                        </a></li>
-
-                    </ul>
-                </div>
-                <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
-                    <h3> My Account </h3>
-                    <ul>
-                        <li><a href="account.jsp"> My Account </a></li>
-                        <li><a href="my-address.jsp"> My Address </a></li>
-                        <li><a href="wishlist.jsp"> Wish List </a></li>
-                        <li><a href="order-list.jsp"> Order list </a></li>
-                        <li><a href="order-status.jsp"> Order Status </a></li>
-                    </ul>
-                </div>
-
-                <div style="clear:both" class="hide visible-xs"></div>
-
-                <div class="col-lg-3  col-md-3 col-sm-6 col-xs-12 ">
-                    <h3> Stay in touch </h3>
-                    <ul>
-                        <li>
-                            <div class="input-append newsLatterBox text-center">
-                                <input type="text" class="full text-center" placeholder="Email ">
-                                <button class="btn  bg-gray" type="button"> Subscribe <i
-                                        class="fa fa-long-arrow-right"> </i></button>
-                            </div>
-                        </li>
-                    </ul>
-                    <ul class="social">
-                        <li><a href="http://facebook.com"> <i class=" fa fa-facebook"> &nbsp; </i> </a></li>
-                        <li><a href="http://twitter.com"> <i class="fa fa-twitter"> &nbsp; </i> </a></li>
-                        <li><a href="https://plus.google.com"> <i class="fa fa-google-plus"> &nbsp; </i> </a></li>
-                        <li><a href="http://youtube.com"> <i class="fa fa-pinterest"> &nbsp; </i> </a></li>
-                        <li><a href="http://youtube.com"> <i class="fa fa-youtube"> &nbsp; </i> </a></li>
-                    </ul>
-                </div>
-            </div>
-            <!--/.row-->
-        </div>
-        <!--/.container-->
-    </div>
-    <!--/.footer-->
-
-    <div class="footer-bottom">
-        <div class="container">
-            <p class="pull-left"> &copy; ESTORE 2014. All right reserved. </p>
-
-            <div class="pull-right paymentMethodImg"><img height="30" class="pull-right"
-                                                          src="${imageSitePayment}/master_card.png" alt="img"> <img
-                    height="30" class="pull-right" src="${imageSitePayment}/visa_card.png" alt="img"><img height="30"
-                            class="pull-right" src="${imageSitePayment}/paypal.png" alt="img">
-                <img height="30" class="pull-right" src="${imageSitePayment}/american_express_card.png" alt="img"> <img
-                        height="30" class="pull-right" src="${imageSitePayment}/discover_network_card.png" alt="img">
-                <img height="30" class="pull-right" src="${imageSitePayment}/google_wallet.png" alt="img">
-
-            </div>
-        </div>
-    </div>
-    <!--/.footer-bottom-->
-</footer> --%>
-
-
-<!-- Le javascript
-================================================== -->
-
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="${jsJQuery}/jquery-2.1.3.min.js"></script>
-<script src="${bootstrapJs}/bootstrap.min.js"></script>
-<!-- include  parallax plugin -->
-<script type="text/javascript" src="${js}/jquery.parallax-1.1.js"></script>
-
-<!-- optionally include helper plugins -->
-<script type="text/javascript" src="${jsHelperPlugins}/jquery.mousewheel.min.js"></script>
-
-<!-- include mCustomScrollbar plugin //Custom Scrollbar  -->
-
-<script type="text/javascript" src="${js}/jquery.mCustomScrollbar.js"></script>
-
-<!-- include icheck plugin // customized checkboxes and radio buttons   -->
-<script type="text/javascript" src="${pluginsICheck}/icheck.min.js"></script>
-
-<!-- include grid.js // for equal Div height  -->
-<script src="${pluginsJQueryMatchHeightMasterDist}/jquery.matchHeight-min.js"></script>
-<script src="${js}/grids.js"></script>
-
-<!-- include carousel slider plugin  -->
-<script src="${js}/owl.carousel.min.js"></script>
-
-<!-- jQuery select2 // custom select   -->
-<script src="http://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js"></script>
-
-<!-- include touchspin.js // touch friendly input spinner component   -->
-<script src="${js}/bootstrap.touchspin.js"></script>
-
-<!-- include custom script for site  -->
-<script src="${js}/script.js"></script>
-</body>
-</html>

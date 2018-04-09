@@ -8,23 +8,30 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class PageController {
 
-	@RequestMapping(value= {"/","/index"}, method= RequestMethod.GET)
+	@RequestMapping(value= {"/","/index","/home"})
 	public ModelAndView indexPage() {
 		ModelAndView modelAndView = new ModelAndView("index");
+//		modelAndView.addObject("title", "Home");
+		modelAndView.addObject("userClickHome", true);
 		return modelAndView;
 	}
 	
-	@RequestMapping(value= "/contact-us", method= RequestMethod.GET)
+	@RequestMapping(value= "/contact-us")
 	public ModelAndView contactUs() {
-		ModelAndView modelAndView = new ModelAndView("contact-us");
+		ModelAndView modelAndView = new ModelAndView("index");
+//		modelAndView.addObject("title", "Contact Us");
+		modelAndView.addObject("userClickContactUs", true);
 		return modelAndView;
 	}
 	
-	@RequestMapping(value= "/about-us", method= RequestMethod.GET)
+	@RequestMapping(value= "/about-us")
 	public ModelAndView aboutUs() {
-		ModelAndView modelAndView = new ModelAndView("about-us");
+		ModelAndView modelAndView = new ModelAndView("index");
+//		modelAndView.addObject("title", "About us");
+		modelAndView.addObject("userClickAboutUs", true);
 		return modelAndView;
 	}
+	
 	
 	
 }

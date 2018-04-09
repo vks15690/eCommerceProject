@@ -1249,8 +1249,10 @@
 
 </div>
 <!--/.container-->
-</div><!--/.footer-->
+</div>
 
+<!--/.footer-->
+<%-- <footer>
 <div class="footer-bottom">
 
     <div class="container">
@@ -1275,7 +1277,7 @@
 
 </div>
 <!--/.footer-bottom-->
-</footer>
+</footer> --%>
 
 
 <!-- Le javascript
